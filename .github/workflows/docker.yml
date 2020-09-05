@@ -1,0 +1,37 @@
+on:
+  push:
+    branches:
+      - docker
+  release:
+    types: [created]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: ${{ secrets.WEBAPP_NAME }}
+  AZURE_REGISTRY: ${{ secrets.REGISTRY }}
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.1
+        with:
+          submodules: true
+
+      - uses: azure/docker-login@v1
+        with:
+          login-server: ${{ env.AZURE_REGISTRY }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t ${{ env.AZURE_REGISTRY }}/${{ env.AZURE_WEBAPP_NAME }}:${{ github.sha }} .
+          docker push ${{ env.AZURE_REGISTRY }}/${{ env.AZURE_WEBAPP_NAME }}:${{ github.sha }}
+
+      - uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: ${{ env.AZURE_REGISTRY }}/${{ env.AZURE_WEBAPP_NAME }}:${{ github.sha }}
