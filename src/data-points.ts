@@ -166,6 +166,15 @@ export const generateDatapoints = (
     });
   });
 
+  // Spread each point across a day, as EFHIII does
+  points.forEach((_, idx) => {
+    const spread = Math.random();
+
+    points[idx].time += spread;
+    if (points[idx].recoveredTime !== undefined) points[idx].recoveredTime! += spread;
+    if (points[idx].deadTime !== undefined) points[idx].deadTime! += spread;
+  });
+
   const geometry = new THREE.BufferGeometry();
   const vertices = new Float32Array(
     points
