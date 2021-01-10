@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://trylle.github.io/covid-viz/precache-manifest.03d5cec8884bbe8ff30db4e0172ed650.js"
+  "https://trylle.github.io/covid-viz/precache-manifest.9c0c590decbf6b4c568ac6f773555c74.js"
 );
 
 self.addEventListener('message', (event) => {
