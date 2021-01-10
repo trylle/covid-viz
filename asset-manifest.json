@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://trylle.github.io/covid-viz/static/css/main.39877709.chunk.css",
+    "main.js": "https://trylle.github.io/covid-viz/static/js/main.d3925ecf.chunk.js",
+    "main.js.map": "https://trylle.github.io/covid-viz/static/js/main.d3925ecf.chunk.js.map",
+    "runtime-main.js": "https://trylle.github.io/covid-viz/static/js/runtime-main.1c24e441.js",
+    "runtime-main.js.map": "https://trylle.github.io/covid-viz/static/js/runtime-main.1c24e441.js.map",
+    "static/js/2.9bea5dcd.chunk.js": "https://trylle.github.io/covid-viz/static/js/2.9bea5dcd.chunk.js",
+    "static/js/2.9bea5dcd.chunk.js.map": "https://trylle.github.io/covid-viz/static/js/2.9bea5dcd.chunk.js.map",
+    "index.html": "https://trylle.github.io/covid-viz/index.html",
+    "precache-manifest.03d5cec8884bbe8ff30db4e0172ed650.js": "https://trylle.github.io/covid-viz/precache-manifest.03d5cec8884bbe8ff30db4e0172ed650.js",
+    "service-worker.js": "https://trylle.github.io/covid-viz/service-worker.js",
+    "static/css/main.39877709.chunk.css.map": "https://trylle.github.io/covid-viz/static/css/main.39877709.chunk.css.map",
+    "static/js/2.9bea5dcd.chunk.js.LICENSE.txt": "https://trylle.github.io/covid-viz/static/js/2.9bea5dcd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c24e441.js",
+    "static/js/2.9bea5dcd.chunk.js",
+    "static/css/main.39877709.chunk.css",
+    "static/js/main.d3925ecf.chunk.js"
+  ]
+}
